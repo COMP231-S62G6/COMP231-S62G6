@@ -9,13 +9,14 @@
 <%! String exp;%>
 <form action="DetailJob.jsp">
 <Select name=clientid>
+<%String id=(String)session.getValue("uid1");%>
   <%
 Class.forName("com.mysql.jdbc.Driver");
 			System.out.println("hi1");
 			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/pas","root","");
             System.out.println("Connection established");
 Statement stmt=con.createStatement();
-ResultSet rs=stmt.executeQuery("select userid from education");
+ResultSet rs=stmt.executeQuery("select * from empreg where USERID='"+id+"'");
 while(rs.next())
 {
 String cid=rs.getString(1);
