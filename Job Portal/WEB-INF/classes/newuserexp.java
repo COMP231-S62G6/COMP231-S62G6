@@ -1,0 +1,95 @@
+import javax.servlet.*;
+import java.text.*;
+import javax.servlet.http.*;
+import java.util.*;
+import java.io.*;
+import java.sql.*;
+import javax.sql.*;
+public class newuserexp extends HttpServlet
+{
+ PrintWriter out;
+ Connection con;
+ Statement stmt;
+ ResultSet rs;
+ int agg;
+ public void service(HttpServletRequest req,HttpServletResponse res)throws ServletException,IOException
+ {
+  res.setContentType("text/html");
+  out=res.getWriter();
+ 
+  try
+  {
+	   String uid=req.getParameter("uid");
+		String expfield=req.getParameter("expfield");
+		String onsit=req.getParameter("onsit");
+		String pfrom=req.getParameter("pfrom");
+		String prsal=req.getParameter("prsal");
+      String totexp=req.getParameter("totexp");
+	String pwcomp=req.getParameter("pwcomp");
+      String urle=req.getParameter("urle");
+	  if(urle==null)
+	  {
+		  urle="null";
+	  }
+	  System.out.println("uid:"+uid);
+	  System.out.println("url:"+urle);
+
+   String expsal=req.getParameter("expsal");
+String pto=req.getParameter("pto");
+   
+   
+Class.forName("com.mysql.jdbc.Driver");
+			System.out.println("hi1");
+			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/pas","root","");
+            System.out.println("Connection established");
+   Statement stmt=con.createStatement();
+   PreparedStatement ps=con.prepareStatement("INSERT INTO EXPERIENCE VALUES(?,?,?,?,?,?,?,?,?,?)");
+
+	
+   System.out.println(totexp);
+   System.out.println(expfield);
+   System.out.println(pwcomp);
+
+ps.setString(1,uid);
+ps.setString(2,totexp);
+ps.setString(3,expfield);
+ps.setString(4,pwcomp);
+ps.setString(5,onsit);
+ps.setString(6,pfrom);
+ps.setString(7,pto);
+ps.setString(8,prsal);
+ ps.setString(9,expsal);
+  ps.setString(10,urle);
+    
+   System.out.println(uid);
+   System.out.println(totexp);
+   System.out.println(expfield);
+   System.out.println(pwcomp);
+
+	int i=ps.executeUpdate();
+
+if(i==1)	
+    res.sendRedirect("./sucessexp.jsp");
+	ps.close();
+   
+   stmt.close();
+   con.close(); 
+  }
+  catch(Exception e)
+  {
+   e.printStackTrace();
+  }
+ 
+  out.close();
+ }
+}
+
+ 	
+   
+
+
+
+
+
+
+

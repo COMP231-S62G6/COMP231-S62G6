@@ -1,0 +1,55 @@
+// Decompiled by DJ v3.5.5.77 Copyright 2003 Atanas Neshkov  Date: 3/4/2006 4:37:37 PM
+// Home Page : http://members.fortunecity.com/neshkov/dj.html  - Check often for new version!
+// Decompiler options: packimports(3) 
+// Source File Name:   deleteclient.java
+
+import java.io.*;
+import java.sql.*;
+import javax.servlet.ServletException;
+import javax.servlet.http.*;
+
+public class deleteclient extends HttpServlet
+{
+
+    public deleteclient()
+    {
+    }
+
+    public void service(HttpServletRequest httpservletrequest, HttpServletResponse httpservletresponse)
+        throws ServletException, IOException
+    {
+        httpservletresponse.setContentType("text/html");
+        out = httpservletresponse.getWriter();
+        try
+        {
+            javax.servlet.http.HttpSession httpsession = httpservletrequest.getSession(true);
+            String s = httpservletrequest.getParameter("cid");
+            Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+            con = DriverManager.getConnection("jdbc:odbc:pas", "pas", "pas");
+            Statement statement = con.createStatement();
+            rs = statement.executeQuery("SELECT * FROM CLIENT WHERE CLIENTID='" + s + "'");
+            if(rs.next())
+            {
+                System.out.println("before update command");
+                statement.executeUpdate("DELETE FROM CLIENT WHERE CLIENTID='" + s + "'");
+                httpservletresponse.sendRedirect("./sucessclientdeleted.htm");
+            } else
+            {
+                httpservletresponse.sendRedirect("./notsucessclientdeleted.htm");
+            }
+            statement.close();
+            con.close();
+        }
+        catch(Exception exception)
+        {
+            exception.printStackTrace();
+        }
+        out.close();
+    }
+
+    PrintWriter out;
+    Connection con;
+    Statement stmt;
+    ResultSet rs;
+    int agg;
+}
