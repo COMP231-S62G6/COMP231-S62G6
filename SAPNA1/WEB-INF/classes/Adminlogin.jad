@@ -1,0 +1,49 @@
+// Decompiled by DJ v3.5.5.77 Copyright 2003 Atanas Neshkov  Date: 3/27/2007 11:24:58 PM
+// Home Page : http://members.fortunecity.com/neshkov/dj.html  - Check often for new version!
+// Decompiler options: packimports(3) 
+// Source File Name:   Adminlogin.java
+
+import java.io.IOException;
+import java.io.PrintStream;
+import java.sql.*;
+import javax.servlet.ServletException;
+import javax.servlet.http.*;
+import sun.jdbc.odbc.JdbcOdbcDriver;
+
+public class Adminlogin extends HttpServlet
+{
+
+    public Adminlogin()
+    {
+    }
+
+    public void service(HttpServletRequest httpservletrequest, HttpServletResponse httpservletresponse)
+        throws ServletException, IOException
+    {
+        httpservletresponse.setContentType("text/html");
+        java.io.PrintWriter printwriter = httpservletresponse.getWriter();
+        javax.servlet.http.HttpSession httpsession = httpservletrequest.getSession(true);
+        try
+        {
+            new JdbcOdbcDriver();
+            con = DriverManager.getConnection("jdbc:odbc:pas", "pas", "pas");
+            System.out.println("this is admin login after connection");
+            stmt = con.createStatement();
+            String s = httpservletrequest.getParameter("name").trim();
+            String s1 = httpservletrequest.getParameter("pass").trim();
+            rs = stmt.executeQuery("SELECT * FROM adminlogin WHERE USERNAME='" + s + "' and PASSWORD=+'" + s1 + "'");
+            if(rs.next())
+                httpservletresponse.sendRedirect("./adminframetop.htm");
+            else
+                httpservletresponse.sendRedirect("./AdminLogin.jsp");
+        }
+        catch(Exception exception)
+        {
+            exception.printStackTrace();
+        }
+    }
+
+    Connection con;
+    Statement stmt;
+    ResultSet rs;
+}
