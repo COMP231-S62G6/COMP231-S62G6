@@ -1,62 +1,79 @@
 <?xml version="1.0" ?>
 <web-app>
 
+
+
+
 <servlet>
-  <servlet-name>jobseek</servlet-name>
-  <servlet-class>jobseeklogin</servlet-class>
+  <servlet-name>newclientreg</servlet-name>
+  <servlet-class>newclientreg</servlet-class>
 </servlet>
+
 <servlet-mapping>
-<servlet-name>jobseek</servlet-name>
-<url-pattern>/jobseeklogin1</url-pattern>
+<servlet-name>newclientreg</servlet-name>
+<url-pattern>/newclientreg</url-pattern>
 </servlet-mapping>
 
 <servlet>
-  <servlet-name>newuserperdetail</servlet-name>
-  <servlet-class>newuserpersonal</servlet-class>
+  <servlet-name>newclientreg1</servlet-name>
+  <servlet-class>newclientreg1</servlet-class>
 </servlet>
+
 <servlet-mapping>
-<servlet-name>newuserperdetail</servlet-name>
-<url-pattern>/newusepersonaldetails</url-pattern>
+<servlet-name>newclientreg1</servlet-name>
+<url-pattern>/newclientreg1</url-pattern>
 </servlet-mapping>
 
-<servlet>
-  <servlet-name>newuserskill</servlet-name>
-  <servlet-class>newuserskill</servlet-class>
-</servlet>
-<servlet-mapping>
-<servlet-name>newuserskill</servlet-name>
-<url-pattern>/newempskills</url-pattern>
-</servlet-mapping>
+
 
 <servlet>
-  <servlet-name>newuserproj1</servlet-name>
-  <servlet-class>newuserproj</servlet-class>
+  <servlet-name>exlogin</servlet-name>
+  <servlet-class>newclientlogin</servlet-class>
 </servlet>
 <servlet-mapping>
-<servlet-name>newuserproj1</servlet-name>
-<url-pattern>/newempprojxm</url-pattern>
+<servlet-name>exlogin</servlet-name>
+<url-pattern>/newclientlogin</url-pattern>
 </servlet-mapping>
 
 
 <servlet>
-  <servlet-name>newuserexp</servlet-name>
-  <servlet-class>newuserexp</servlet-class>
+  <servlet-name>exconloginchech</servlet-name>
+  <servlet-class>exconsullogin55</servlet-class>
 </servlet>
-
 <servlet-mapping>
-<servlet-name>newuserexp</servlet-name>
-<url-pattern>/newuserexp</url-pattern>
+<servlet-name>exconloginchech</servlet-name>
+<url-pattern>/exconsultlogin77</url-pattern>
 </servlet-mapping>
+
+
 <servlet>
-  <servlet-name>newuserresume</servlet-name>
-  <servlet-class>newuserresume</servlet-class>
+  <servlet-name>newjobset1</servlet-name>
+  <servlet-class>newjobreg</servlet-class>
 </servlet>
-
 <servlet-mapping>
-<servlet-name>newuserresume</servlet-name>
-<url-pattern>/newuserresume</url-pattern>
+<servlet-name>newjobset1</servlet-name>
+<url-pattern>/newjobset</url-pattern>
 </servlet-mapping>
 
+
+<servlet>
+  <servlet-name>updateclientdetail</servlet-name>
+  <servlet-class>updateexclient</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>updateclientdetail</servlet-name>
+<url-pattern>/exclientmodi77</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+  <servlet-name>deleteclientdetails</servlet-name>
+  <servlet-class>deleteclient</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>deleteclientdetails</servlet-name>
+<url-pattern>/deleteclient88</url-pattern>
+</servlet-mapping>
 
 <servlet>
   <servlet-name>r</servlet-name>
