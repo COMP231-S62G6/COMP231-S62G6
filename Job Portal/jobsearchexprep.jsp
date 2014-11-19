@@ -51,7 +51,9 @@ ResultSet rs=stmt.executeQuery("select CLIENTID,JOBTITLE,JOBCODE,SKILL,NOYEXP,CL
     <td width="154"><%=f3%></td>
     <td width="192"><%=f4%>
 <td><%=f5%>
-<td><%=f6%>   </tr>
+<td><%=f6%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="applyjob.jsp">Apply Job</a>
+   </tr>
 
 <%}%>
 </table>
