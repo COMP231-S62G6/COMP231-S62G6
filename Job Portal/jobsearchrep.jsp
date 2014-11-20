@@ -62,7 +62,13 @@ ResultSet rs=stmt.executeQuery("select CLIENTID,JOBTITLE,JOBCODE,skill,NOYEXP,CL
 		f11=(f11==null)?"":f11;*/
 		%>
 
-
+ <tr bgcolor="#9999CC"> 
+    <td width="189"><%=f1%></td>
+    <td width="154"><%=f2%></td>
+    <td width="154"><%=f3%></td>
+    <td width="192"><%=f4%> </td><td><%=f5%><td> <%=f6%> 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="applyjob.jsp">Apply Job</a>
+       </tr> 
 
 <%}%>
 </table>
