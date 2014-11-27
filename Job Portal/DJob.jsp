@@ -15,7 +15,7 @@ Class.forName("com.mysql.jdbc.Driver");
 			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/pas","root","");
             System.out.println("Connection established");
 Statement stmt=con.createStatement();
-ResultSet rs=stmt.executeQuery("select userid from education");
+ResultSet rs=stmt.executeQuery("select userid from education where ");
 while(rs.next())
 {
 String cid=rs.getString(1);
