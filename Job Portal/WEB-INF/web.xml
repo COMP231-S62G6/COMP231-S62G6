@@ -1,7 +1,61 @@
 <?xml version="1.0" ?>
 <web-app>
 
+<servlet>
+  <servlet-name>jobseek</servlet-name>
+  <servlet-class>jobseeklogin</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>jobseek</servlet-name>
+<url-pattern>/jobseeklogin1</url-pattern>
+</servlet-mapping>
 
+<servlet>
+  <servlet-name>newuserperdetail</servlet-name>
+  <servlet-class>newuserpersonal</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>newuserperdetail</servlet-name>
+<url-pattern>/newusepersonaldetails</url-pattern>
+</servlet-mapping>
+
+<servlet>
+  <servlet-name>newuserskill</servlet-name>
+  <servlet-class>newuserskill</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>newuserskill</servlet-name>
+<url-pattern>/newempskills</url-pattern>
+</servlet-mapping>
+
+<servlet>
+  <servlet-name>newuserproj1</servlet-name>
+  <servlet-class>newuserproj</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>newuserproj1</servlet-name>
+<url-pattern>/newempprojxm</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+  <servlet-name>newuserexp</servlet-name>
+  <servlet-class>newuserexp</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>newuserexp</servlet-name>
+<url-pattern>/newuserexp</url-pattern>
+</servlet-mapping>
+<servlet>
+  <servlet-name>newuserresume</servlet-name>
+  <servlet-class>newuserresume</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>newuserresume</servlet-name>
+<url-pattern>/newuserresume</url-pattern>
+</servlet-mapping>
 
 
 <servlet>
@@ -24,7 +78,66 @@
 <url-pattern>/newclientreg1</url-pattern>
 </servlet-mapping>
 
+<servlet>
+  <servlet-name>newuserqual</servlet-name>
+  <servlet-class>newuserqul</servlet-class>
+</servlet>
 
+<servlet-mapping>
+<servlet-name>newuserqual</servlet-name>
+<url-pattern>/newuserqul</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+  <servlet-name>updateusepers</servlet-name>
+  <servlet-class>updateuserpersonaldet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>updateusepers</servlet-name>
+<url-pattern>/updateuserpersonal</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+  <servlet-name>modiusereducationaldet</servlet-name>
+  <servlet-class>updateusereduudet</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>modiusereducationaldet</servlet-name>
+<url-pattern>/modieducationaldet</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+  <servlet-name>modiuserskilldet</servlet-name>
+  <servlet-class>updateuserskill</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>modiuserskilldet</servlet-name>
+<url-pattern>/updateuserskill</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+  <servlet-name>modiuserexpdet</servlet-name>
+  <servlet-class>updateuserexp1</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>modiuserexpdet</servlet-name>
+<url-pattern>/updateuseexpdet</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+  <servlet-name>modiuserproject</servlet-name>
+  <servlet-class>updateuserproj</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>modiuserproject</servlet-name>
+<url-pattern>/updateuserproject</url-pattern>
+</servlet-mapping>
 
 <servlet>
   <servlet-name>exlogin</servlet-name>
